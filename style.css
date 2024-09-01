@@ -95,13 +95,15 @@ body{
     top: 50%;
     left: 0;
     cursor: pointer;
-
+    animation: slide-back 0.2s;
 }
 
+.switch button:hover{
+    outline: 8px solid var(--highlight-color);
+}
 
 .light .switch button{
-    right: 0;
-    left: initial;
+    animation: slide-in 0.2s forwards;
 }
 
 .switch span{
@@ -183,5 +185,24 @@ footer a:hover{
 
     .light{
         --bg-image: url(./assets/bg-mobile-light.jpg)
+    }
+}
+
+/*animation */
+@keyframes slide-in {
+    from{
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back{
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
     }
 }
